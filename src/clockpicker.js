@@ -466,6 +466,7 @@
 		this.minutes = + value[1] || 0;
 		this.spanHours.html(leadingZero(this.hours));
 		this.spanMinutes.html(leadingZero(this.minutes));
+                this.spanAmPm.html(value[1].substr(2).trim());
 
 		// Toggle to hours view
 		this.toggleView('hours');
