@@ -169,6 +169,7 @@
 		// Placement and arrow align - make sure they make sense.
 		if ((options.placement === 'top' || options.placement === 'bottom') && (options.align === 'top' || options.align === 'bottom')) options.align = 'left';
 		if ((options.placement === 'left' || options.placement === 'right') && (options.align === 'left' || options.align === 'right')) options.align = 'top';
+                if(!options.container) options.container = document.body;
 
 		popover.addClass(options.placement);
 		popover.addClass('clockpicker-align-' + options.align);
@@ -382,7 +383,7 @@
 	ClockPicker.prototype.locate = function(){
 		var element = this.element,
 			popover = this.popover,
-			offset = element.offset(),
+			offset = this.options.container == document.body ? element.offset():element.position(),
 			width = element.outerWidth(),
 			height = element.outerHeight(),
 			placement = this.options.placement,
@@ -441,7 +442,8 @@
 		// Initialize
 		if (! this.isAppended) {
 			// Append popover to body
-			$body = $(document.body).append(this.popover);
+                        console.log(this.options.container);
+			$body = $(this.options.container).append(this.popover);
 
 			// Reset position when resize
 			$win.on('resize.clockpicker' + this.id, function(){
@@ -463,10 +465,12 @@
 			];
 		}
 		this.hours = + value[0] || 0;
-		this.minutes = + value[1] || 0;
+		this.minutes = + value[1].substr(0, 2) || 0;
 		this.spanHours.html(leadingZero(this.hours));
 		this.spanMinutes.html(leadingZero(this.minutes));
-                this.spanAmPm.html(value[1].substr(2).trim());
+                if  (this.options.twelvehour) {
+                    this.spanAmPm.html(value[1].substr(2).trim());
+                }
 
 		// Toggle to hours view
 		this.toggleView('hours');
