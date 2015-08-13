@@ -442,7 +442,6 @@
 		// Initialize
 		if (! this.isAppended) {
 			// Append popover to body
-                        console.log(this.options.container);
 			$body = $(this.options.container).append(this.popover);
 
 			// Reset position when resize
