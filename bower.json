@@ -1,7 +1,6 @@
 {
   "name": "sloth-clockpicker",
   "description": "A clock-style timepicker for Bootstrap (or jQuery)",
-  "version": "0.0.8",
   "main": [
     "dist/jquery-clockpicker.js",
     "dist/jquery-clockpicker.css"
