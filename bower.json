@@ -1,7 +1,7 @@
 {
-  "name": "clockpicker",
+  "name": "sloth-clockpicker",
   "description": "A clock-style timepicker for Bootstrap (or jQuery)",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": [
     "dist/jquery-clockpicker.js",
     "dist/jquery-clockpicker.css"
@@ -20,12 +20,17 @@
       "name": "Wang Shenwei",
       "email": "wangshenwei@qq.com",
       "homepage": "http://wangshenwei.com/"
+    },
+    {
+      "name": "Alan Buss",
+      "email": "al@constellationwebservices.com",
+      "homepage": "https://github.com/motivatedsloth/"
     }
   ],
-  "homepage": "http://weareoutman.github.io/clockpicker/",
+  "homepage": "https://github.com/motivatedsloth/clockpicker",
   "repository": {
     "type": "git",
-    "url": "git://github.com/weareoutman/clockpicker.git"
+    "url": "git@github.com:motivatedsloth/clockpicker.git"
   },
   "dependencies": {
     "jquery" : ">=1.7"
